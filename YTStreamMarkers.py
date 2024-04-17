@@ -59,7 +59,7 @@ def importOBSL(date):
     return 0
 def parseWCL(logText):
     #intake the log text variable and output tuple/dictionary relating pull number and time in local timezone
-    #Should probably include some data on what encounter but fuck it for now
+    #Should probably include some data on what encounter
     listPulls = []
     for line in logText:
         if 'ENCOUNTER_START' in line:
@@ -75,7 +75,7 @@ def parseWCL(logText):
     return listPulls
 def parseOBSL(logText,gDate):
     #intake the log text variable from OBS and output stream start date/time
-    #should probably use strptime instead but its annoying and im lazy
+    #should probably use strptime instead
     for line in logText:
         if 'Streaming Start' in line:
             temp_line = re.split('[ /:.]',line)
